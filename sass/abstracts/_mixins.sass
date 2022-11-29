@@ -1,0 +1,18 @@
+// Брейкпоинты
+ 
+@mixin respond($brekpoint)
+  @if $brekpoint == phone
+    @media (max-width: 600px)
+      @content
+
+  @if $brekpoint == tab-port
+    @media (max-width: 900px)
+      @content
+
+  @if $brekpoint == tab-land
+    @media (max-width: 1200px)
+      @content
+
+  @if $brekpoint == big-screen
+    @media (min-width: 1800px)
+      @content
