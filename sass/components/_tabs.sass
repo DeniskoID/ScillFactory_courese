@@ -1,0 +1,51 @@
+.benefits-section
+
+  &__inner
+
+  &__tabs
+
+
+.tabs
+
+  &__lnks
+    list-style: none
+    margin: 0
+    padding: 0
+    display: flex
+    border-bottom: 1px solid $color-gray
+    margin-bottom: 32px
+
+  &__item
+    font-weight: 700
+    font-size: rem(24)
+    line-height: rem(44)
+    color: $color-footer
+    cursor: pointer
+    position: relative
+
+    &:not(:last-child)
+      margin-right: rem(32)
+
+  &__content
+    max-width: rem(780)
+
+
+  &__content-item
+    animation: leftToRightText .5s ease
+
+// .active-tab
+//   color: $color-accent
+//   border-bottom: 2px solid $color-accent
+
+.active-tab
+  color: $color-accent
+  &::after
+    content: ''
+    position: absolute
+    top: 100%
+    left: 0
+    width: 0
+    height: rem(2)
+    border-radius: 10px
+    background-color: $color-accent
+    animation: leftToRight .3s ease forwards

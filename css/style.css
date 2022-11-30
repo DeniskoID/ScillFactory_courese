@@ -77,6 +77,24 @@ p {
   margin-bottom: 14px;
 }
 
+@keyframes leftToRight {
+  to {
+    width: 100%;
+  }
+}
+@keyframes leftToRightText {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  80% {
+    transform: translateX(0.2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
 .button, .button:link, .button:visited {
   padding: 16px 32px;
   background-color: #0096A7;
@@ -246,6 +264,47 @@ p {
   transition: none;
 }
 
+.tabs__lnks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border-bottom: 1px solid #E1E1E1;
+  margin-bottom: 32px;
+}
+.tabs__item {
+  font-weight: 700;
+  font-size: 1.3333333333rem;
+  line-height: 2.4444444444rem;
+  color: rgba(66, 74, 87, 0.5);
+  cursor: pointer;
+  position: relative;
+}
+.tabs__item:not(:last-child) {
+  margin-right: 1.7777777778rem;
+}
+.tabs__content {
+  max-width: 43.3333333333rem;
+}
+.tabs__content-item {
+  animation: leftToRightText 0.5s ease;
+}
+
+.active-tab {
+  color: #0096A7;
+}
+.active-tab::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0.1111111111rem;
+  border-radius: 10px;
+  background-color: #0096A7;
+  animation: leftToRight 0.3s ease forwards;
+}
+
 .advantages-section__inner h2 {
   margin-bottom: 1.7777777778rem;
 }
@@ -396,6 +455,10 @@ main {
 .hero-section {
   background-color: #F6F8FB;
   padding: 5.5555555556rem 0;
+}
+
+.benefits-section {
+  padding-top: 4.7222222222rem;
 }
 
 .advantages-section__inner {
