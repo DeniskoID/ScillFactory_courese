@@ -257,6 +257,10 @@ h3 {
   }
 }
 
+.overflowHidden {
+  overflow: hidden;
+}
+
 .itcss {
   position: relative;
 }
@@ -684,8 +688,8 @@ h3 {
 }
 .page-footer__copyright {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 44px;
+  font-size: 1.3333333333rem;
+  line-height: 2.4444444444rem;
   color: white;
 }
 @media (max-width: 560px) {

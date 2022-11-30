@@ -1,3 +1,20 @@
+//Добавляем overflow: hidden при открытии моб. меню
+
+function toggleClass(buttonSelector, subjectSelector, toggleClass) {
+  const buttonSelectorr = document.querySelector(buttonSelector);
+  const subjectSelectorr = document.querySelector(subjectSelector);
+
+  buttonSelectorr.addEventListener('click', () => {
+    if (subjectSelectorr.classList.contains(toggleClass)) {
+      subjectSelectorr.classList.remove(toggleClass);
+    } else {
+      subjectSelectorr.classList.add(toggleClass);
+    }
+  });
+}
+
+toggleClass('.mobile-menu__btn', 'body', 'overflowHidden');
+
 // ТАБЫ
 
 const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display = 'block') => {
