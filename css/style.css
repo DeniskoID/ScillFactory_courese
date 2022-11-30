@@ -690,9 +690,10 @@ h3 {
 }
 @media (max-width: 560px) {
   .page-footer__copyright {
-    margin-bottom: 0.8333333333rem;
+    margin-bottom: 1.1111111111rem;
   }
 }
+
 .social-icons {
   list-style: none;
   margin: 0;
