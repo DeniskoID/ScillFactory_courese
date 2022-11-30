@@ -1,14 +1,10 @@
-
-
 .itcss
   position: relative
-
 
   &__wrapper
     position: relative
     overflow: hidden
     background-color: $color-section-background
-
 
   &__items
     display: flex
@@ -16,7 +12,6 @@
     backface-visibility: hidden
     transition: transform 0.5s ease
     will-change: transform
-
 
   &__item
     position: relative
@@ -27,10 +22,18 @@
     backface-visibility: hidden
     will-change: transform
 
+    @media (max-width: 714px)
+      flex-direction: column
+
     &_img
       max-width: rem(590)
       width: 100%
       margin-right: rem(60)
+
+      @media (max-width: 714px)
+        max-width: unset
+        margin-right: 0
+        margin-bottom: rem(30)
 
       & img
         display: block
@@ -48,11 +51,24 @@
       width: 100%
       max-width: rem(590)
 
+      @media (max-width: 714px)
+        height: rem(400)
+
     &_title
       font-weight: 700
       font-size: rem(54)
       line-height: rem(64)
       color: $color-title
+      margin-bottom: rem(32)
+ 
+      @media (max-width: 900px)
+        font-size: rem(44)
+        line-height: rem(54)
+        margin-bottom: rem(20)
+
+      @media (max-width: 460px)
+        font-size: rem(35)
+        line-height: rem(45)
 
     &_subtitle
       font-weight: 400
@@ -60,6 +76,14 @@
       line-height: rem(38)
       color: $color-text
       margin-top: 0
+      margin-bottom: rem(32)
+
+      @media (max-width: 714px)
+        margin-bottom: auto
+
+      @media (max-width: 900px)
+        font-size: rem(20)
+        line-height: rem(31)
 
   &__btn
     position: absolute   
@@ -103,11 +127,10 @@
     background: transparent no-repeat center center   
     background-size: 100% 100%
     
-
   &__indicators  
     position: absolute   
     right: 0   
-    bottom: rem(-65)   
+    bottom: rem(-56)   
     left: 0   
     display: flex   
     justify-content: center   
@@ -115,6 +138,9 @@
     padding-left: 0   
     list-style: none   
     user-select: none
+
+    @media (max-width: 714px)
+       bottom: rem(78)
 
   &__btn::before  
     content: ""   
@@ -126,7 +152,6 @@
 
   &__btn_prev::before  
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e")   
-
 
   &__btn_next::before  
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
@@ -140,12 +165,16 @@
     background-color: transparent
     border: rem(4) solid $color-accent
     border-radius: 50%   
-    cursor: pointer     
+    cursor: pointer  
+
+    @media (max-width: 714px)
+      width: rem(16)   
+      height: rem(16)
+      border: rem(2) solid $color-accent  
 
   &__indicator_active  
     background-color: $color-accent 
 
- 
 .transition-none  
   transition: none  
 

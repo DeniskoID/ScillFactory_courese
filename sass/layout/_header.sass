@@ -1,6 +1,9 @@
 .page-header
-  padding: rem(50) 0
+  padding: 0
   background-color: $color-gray-dark
+
+  @media (min-width: 900px)
+      padding: rem(50) 0 
 
   &__inner
     // width: 100%
@@ -8,11 +11,14 @@
     // margin: 0 auto
 
   &__wrapper
-    display: flex
+    display: none
     flex-direction: row
     justify-content: space-between
     align-items: center
 
+
+    @media (min-width: 900px)
+      display: flex  
 
   &__logo
     display: flex
