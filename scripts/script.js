@@ -1,26 +1,23 @@
 //Добавляем overflow: hidden при открытии моб. меню
 
-function toggleClass(buttonSelector, subjectSelector, toggleClass) {
+function toggleClass(buttonSelector, subjSelectorr, toggleClass) {
   const buttonSelectorr = document.querySelector(buttonSelector);
-  const subjectSelectorr = document.querySelector(subjectSelector);
-
+  const subjSelector = document.querySelector(subjSelectorr);
   buttonSelectorr.addEventListener('click', () => {
-    if (subjectSelectorr.classList.contains(toggleClass)) {
-      subjectSelectorr.classList.remove(toggleClass);
+    if (subjSelector.classList.contains(toggleClass)) {
+      subjSelector.classList.remove(toggleClass);
     } else {
-      subjectSelectorr.classList.add(toggleClass);
+      subjSelector.classList.add(toggleClass);
     }
   });
 }
 
-toggleClass('.mobile-menu__btn', 'body', 'overflowHidden');
-
 // ТАБЫ
 
 const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display = 'block') => {
-  const header = document.querySelector(headerSelector),
-    tab = document.querySelectorAll(tabSelector),
-    content = document.querySelectorAll(contentSelector);
+  const header = document.querySelector(headerSelector);
+  const tab = document.querySelectorAll(tabSelector);
+  const content = document.querySelectorAll(contentSelector);
 
   function hideTabContent() {
     content.forEach((item) => {
@@ -57,11 +54,13 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display
   });
 };
 
-//Инициализация табов
+//Инициализация табов, overflow при открытии моб. меню
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
   tabs('.tabs__lnks', '.tabs__item', '.tabs__content-item', 'active-tab');
+
+  toggleClass('.mobile-menu__btn', 'body', 'overflowHidden');
 });
 
 // ПЛАВНЫЙ СКРОЛЛ ДО ЯКОРЯ
@@ -77,6 +76,11 @@ for (let anchor of anchors) {
       behavior: 'smooth',
       block: 'start',
     });
+
+    if (anchor.classList.contains('mobile-menu__link')) {
+      console.log(anchor);
+      document.querySelector('body').classList.remove('overflowHidden');
+    }
 
     const check = document.querySelector('.mobile-menu__checkbox');
     check.checked = false;

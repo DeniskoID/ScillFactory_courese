@@ -46,6 +46,7 @@
     margin-bottom: rem(32)
     flex-grow: 0
     flex-shrink: 1
+    overflow: hidden
 
     @media (max-width: 810px)
       width: 100%
@@ -56,6 +57,11 @@
     height: 100%
     object-fit: cover
     object-position: center
+    transition: all .4s ease
+
+    &:hover
+      transform: scale(1.05)
+
     
   & h3 
     width: 100%
