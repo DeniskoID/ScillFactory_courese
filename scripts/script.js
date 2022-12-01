@@ -78,7 +78,6 @@ for (let anchor of anchors) {
     });
 
     if (anchor.classList.contains('mobile-menu__link')) {
-      console.log(anchor);
       document.querySelector('body').classList.remove('overflowHidden');
     }
 
